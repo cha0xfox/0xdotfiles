@@ -1,4 +1,4 @@
 #!/bin/sh
-pushd ~/git/MyNixConfig
+pushd ~/0xdotfiles
 sudo nixos-rebuild switch --max-jobs 12 -I nixos-config=./system/configuration.nix
 popd

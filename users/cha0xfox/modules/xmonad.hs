@@ -105,6 +105,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Launcher
 
     , ((modm,               xK_d     ), spawn "rofi -matching fuzzy rofi -show drun -modi drun,run -show-icons")
+    , ((modm .|. shiftMask, xK_d     ), spawn "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/shutmenu.sh")
 
     -- Restart xmonad
 
