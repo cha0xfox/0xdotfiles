@@ -5,19 +5,16 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    libinput.mouse.accelProfile = "flat";
+    libinput.mouse.accelProfile = "adaptive";
     layout = "us,ru";
     xkbOptions = "grp:alt_shift_toggle";
-    libinput.mouse.accelSpeed = "0";
+    libinput.mouse.accelSpeed = "2";
     inputClassSections = [ ''
       Identifier "My Mouse"
       MatchIsPointer "yes"
-      Option "AccelerationProfile" "-1"
-      Option "AccelerationScheme" "none"
-      Option "AccelSpeed" "-1"
     '' ];
 
-
+      #Option "AccelerationScheme" "none"
     #displayManager.sddm.enable = true;
     #displayManager.sddm.theme = "abstractdark-sddm-theme";
     #windowManager.awesome.enable = true;

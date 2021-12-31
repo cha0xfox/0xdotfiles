@@ -117,7 +117,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Copy screenshot 
 
-    , ((modm,               xK_p     ), spawn "maim -s | tee ~/Screenshots/screen-$(date +%s).png | xclip -selection clipboard -t image/png")
+    , ((modm,               xK_p     ), spawn "maim -s -u | tee ~/Screenshots/screen-$(date +%s).png | xclip -selection clipboard -t image/png")
 
     -- Make window fload and center
 
