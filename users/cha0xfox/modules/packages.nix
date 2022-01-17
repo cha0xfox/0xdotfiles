@@ -11,13 +11,10 @@ in
         xmobar
         ncmpcpp
         ffmpeg
-        (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
         discocss
         discord
         obsidian
         qjackctl
-        android-studio
-        android-tools
         tdesktop
         gromit-mpx
         spotify
@@ -27,12 +24,13 @@ in
         lens
         reaper
         pfetch
+        pscircle
         #eww
-        (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
-          dfVersion = "0.47.05";
-          enableIntro = false;
-          enableFPS = true;
-        })
+        #(pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+        #  dfVersion = "0.47.05";
+        #  enableIntro = false;
+        #  enableFPS = true;
+        #})
     ] ++ [
      #localPkgs.boomer
     ];

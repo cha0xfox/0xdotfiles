@@ -107,11 +107,16 @@ in
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.cha0xfox = {
+  users.users.cha0xfox = {
      isNormalUser = true;
      initialPassword = "toor";
      extraGroups = [ "wheel" "cdrom" "disk" "audio" "libvirtd" "docker" "input" ]; # Enable ‘sudo’ for the user.
-   };
+  };
+
+  services.gnome.gnome-keyring.enable = true;
+  security = {
+    pam.services.login.enableGnomeKeyring = true;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

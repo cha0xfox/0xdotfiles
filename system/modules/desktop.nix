@@ -61,6 +61,7 @@ in
     mononoki
     font-awesome
     iosevka
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
   ];
 
   environment.variables.EDITOR = "nvim";

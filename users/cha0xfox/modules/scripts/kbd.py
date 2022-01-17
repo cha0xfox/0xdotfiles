@@ -41,3 +41,7 @@ for event in dev.read_loop():
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh aneurysm.mp3 &')
       if key.keycode == 'KEY_V':
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh mebad.mp3 &')
+      if key.keycode == 'KEY_G':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh kuku.mp3 &')
+      if key.keycode == 'KEY_H':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh kuku2.mp3 &')
