@@ -15,7 +15,7 @@ cursor:
 font:
   normal:
     # Needs to be powerline font if using zsh theme with powerline
-    family: Iosevka Extended 
+    family: Iosevka Nerd Font 
   # Font size
   size: 9
 
@@ -80,3 +80,10 @@ selection:
 
   # When true, selected text will be copied to the primary clipboard
   save_to_clipboard: true
+
+shell:
+  program: /bin/sh
+  args:
+    - -l
+    - -c
+    - "fish"

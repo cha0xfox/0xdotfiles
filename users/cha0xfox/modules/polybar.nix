@@ -2,7 +2,7 @@
 {
     services.polybar = {
         enable = true;
-        config = ./configs/polybar/polybar.conf;
-        script = "polybar bar &";
+        config = ./configs/polybar/forest/preview.ini;
+        script = "polybar top &";
     };
 }

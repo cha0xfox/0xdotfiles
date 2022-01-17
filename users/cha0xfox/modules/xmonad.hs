@@ -46,7 +46,7 @@ import Distribution.Simple (KnownExtension(MultiWayIf))
 --------[main]--------
 
 main = do
-  xmproc2 <- spawnPipe "xmobar -x 2 ~/.xmobarrc"
+  --xmproc2 <- spawnPipe "xmobar -x 2 ~/.xmobarrc"
   xmonad $ ewmh def 
     { terminal    = myTerminal
     , modMask     = mod4Mask
@@ -56,10 +56,10 @@ main = do
     , layoutHook  = avoidStruts $ myLayouts
     , borderWidth = 0
     , focusedBorderColor = "#bd93f9"
-    , logHook     = dynamicLogWithPP xmobarPP
-                        { ppOutput = hPutStrLn xmproc2
-                        , ppTitle = xmobarColor "green" "" . shorten 50
-                        }
+--    , logHook     = dynamicLogWithPP xmobarPP
+--                        { ppOutput = hPutStrLn xmproc2
+--                        , ppTitle = xmobarColor "green" "" . shorten 50
+--                        }
     , manageHook  = myManageHook <+> manageDocks
     , handleEventHook = handleEventHook def <+> fullscreenEventHook
     }
@@ -84,7 +84,7 @@ myWS = [webWs, devWs, comWs, wrkWs, sysWs, etcWs]
 
 --------------------------
 
-myFish = "alacritty -e fish"
+myFish = "alacritty"
 myTerminal = "alacritty"
 
 
