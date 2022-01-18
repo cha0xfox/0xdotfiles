@@ -13,7 +13,6 @@
   ./modules/filemap.nix
   ./modules/services.nix
   ./modules/configs/xresources.nix
-  ./modules/polybar.nix
   #./modules/emacs.nix
   ];
 

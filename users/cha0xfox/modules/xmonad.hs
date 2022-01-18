@@ -3,6 +3,8 @@ import XMonad.Config.Desktop
 import XMonad.Operations
 import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
+--import qualified DBus as D
+--import qualified DBus.Client as D
 import XMonad.Util.SpawnOnce (spawnOnce)
 import XMonad.Util.Run (spawnPipe, hPutStrLn)
 import XMonad.Util.NamedScratchpad
@@ -56,6 +58,7 @@ main = do
     , layoutHook  = avoidStruts $ myLayouts
     , borderWidth = 0
     , focusedBorderColor = "#bd93f9"
+--    , logHook     = myLogHook
 --    , logHook     = dynamicLogWithPP xmobarPP
 --                        { ppOutput = hPutStrLn xmproc2
 --                        , ppTitle = xmobarColor "green" "" . shorten 50
@@ -228,6 +231,7 @@ myLayouts =
 
 myStartupHook = do
     spawnOnce "feh --bg-fill ~/wall.png"
+    spawnOnce "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/autostart.sh"
     setDefaultCursor xC_left_ptr
     
 
@@ -259,3 +263,7 @@ myManageHook = composeAll
 myHandleEventHook :: Event -> X All
 myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "scratchpad" --> floating)
         where floating = customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3)
+
+--------[Log hook]--------
+--myLogHook :: D.Client -> PP
+--myLogHook dbus = namedScratchpadFilterOutWorkspacePP $ def { ppOutput = dbusOutput dbus }

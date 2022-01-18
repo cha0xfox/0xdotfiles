@@ -48,6 +48,7 @@ in
     libcap
     thunderbird
     alacritty
+    xmonad-log
   ];
 
   fonts.fonts = with pkgs; [
