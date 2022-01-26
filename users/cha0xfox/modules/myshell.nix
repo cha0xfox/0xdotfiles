@@ -12,6 +12,7 @@
         apply-system = "~/0xdotfiles/apply-system.sh";
         update-users = "~/0xdotfiles/update-users.sh";
         update-system = "~/0xdotfiles/update-system.sh";
+        soundboard = "python3 ~/0xdotfiles/users/cha0xfox/modules/scripts/kbd.py";
     };
     plugins = [
     ];

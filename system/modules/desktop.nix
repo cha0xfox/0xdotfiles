@@ -26,7 +26,7 @@ in
     linuxPackages.cpupower
     pcmanfm
     git
-    gnome3.dconf
+    dconf
     feh sxiv
     pulsemixer
     pciutils
@@ -48,7 +48,8 @@ in
     libcap
     thunderbird
     alacritty
-    xmonad-log
+    libwacom
+    xf86_input_wacom
   ];
 
   fonts.fonts = with pkgs; [

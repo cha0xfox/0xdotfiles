@@ -230,7 +230,7 @@ myLayouts =
 --------[Startup]--------
 
 myStartupHook = do
-    spawnOnce "feh --bg-fill ~/wall.png"
+    spawnOnce "feh --bg-fill ~/Wallpapers/wall.png"
     spawnOnce "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/autostart.sh"
     setDefaultCursor xC_left_ptr
     
