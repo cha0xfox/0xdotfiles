@@ -50,6 +50,7 @@ in
     alacritty
     libwacom
     xf86_input_wacom
+    busybox
   ];
 
   fonts.fonts = with pkgs; [

@@ -29,7 +29,6 @@ in
         zathura
         bitwarden
         ripcord
-        #eww
         #(pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
         #  dfVersion = "0.47.05";
         #  enableIntro = false;

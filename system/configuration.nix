@@ -39,7 +39,10 @@ in
   loader.efi.canTouchEfiVariables = true;
 
   kernelParams = [ "intel_iommu=on" "kvm.ignore_msrs=1" "kvm.allow_unsafe_interrupts=1" ];
-  kernelModules = [ "kvm-intel" ];
+  kernelModules = [ "kvm-intel" "v4l2loopback" ];
+  extraModulePackages = [
+      config.boot.kernelPackages.v4l2loopback
+    ];
   initrd.availableKernelModules = [ "vfio-pci" ];
 
   initrd.preDeviceCommands = ''
@@ -62,14 +65,17 @@ in
     hostId = "ef44cfcc";
     firewall.enable = false;
     useDHCP = false;
+    defaultGateway = "192.168.88.1";
+    nameservers = [ "192.168.88.10" "1.1.1.1" ];
     bridges.br0.interfaces = [ "enp5s0" ];
-    interfaces.br0.useDHCP = true;
-  #  interfaces.br0.ipv4.addresses = [
-  #    { 
-  #    address = "192.168.88.111"; 
-  #    prefixLength = 24; 
-  #    }
-  #  ];
+    #interfaces.enp5s0.useDHCP = true;
+    #interfaces.br0.useDHCP = true;
+    interfaces.br0.ipv4.addresses = [
+      { 
+      address = "192.168.88.111"; 
+      prefixLength = 24; 
+      }
+    ];
   };
 
 

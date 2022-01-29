@@ -6,7 +6,7 @@ env:
   TERM: xterm-256color
 
 # Make background slightly transparent
-background_opacity: 1
+window.opacity: 1
 
 cursor:
   # Block Underline or Beam

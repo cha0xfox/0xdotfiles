@@ -1,0 +1,12 @@
+    (defwidget weather_side [] 
+      (box :orientation "h" :space-evenly "false" 
+        (box :class "weather-icon-side" :style "color: #121212" {weather-icon})
+        (box :class "weather-info-side" :orientation "v" :space-evenly "false" 
+          (box :class "temperature-side" "12t")
+          (box :class "weather-stat-side" {weather-stat-side}))))
+
+
+        (defwindow weather_side 
+			    :geometry (geometry :x "95px" :y "45px" :width "215px" :height "80px")
+			     				(weather_side))
+
