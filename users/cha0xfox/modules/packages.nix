@@ -29,6 +29,8 @@ in
         zathura
         bitwarden
         ripcord
+        wmctrl
+        betterdiscordctl
         #(pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
         #  dfVersion = "0.47.05";
         #  enableIntro = false;

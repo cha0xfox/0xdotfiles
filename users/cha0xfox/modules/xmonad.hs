@@ -49,13 +49,13 @@ import Distribution.Simple (KnownExtension(MultiWayIf))
 
 main = do
   --xmproc2 <- spawnPipe "xmobar -x 2 ~/.xmobarrc"
-  xmonad $ ewmh def 
+  xmonad $ docks $ewmh  def 
     { terminal    = myTerminal
     , modMask     = mod4Mask
     , keys        = myKeys
     , startupHook = myStartupHook
     , workspaces  = withScreens 4 myWS
-    , layoutHook  = avoidStruts $ myLayouts
+    , layoutHook  = myLayouts
     , borderWidth = 0
     , focusedBorderColor = "#bd93f9"
 --    , logHook     = myLogHook
@@ -201,17 +201,18 @@ myLayouts =
   (myLayout ||| tiled ||| Mirror tiled ||| full ||| float )
     -- Default tiling algorithm partitions the screen into two panes
   where
-    tiled = renamed [Replace "Tiled"] $ gapSpaced 10 $ Tall nmaster delta ratio
-    full = renamed [Replace "Full"] $ gapSpaced 10 Full
-    column3 = renamed [Replace "3col"] $ gapSpaced 10 $ ThreeColMid 1 (3 / 100) (1 / 2)
+    tiled = renamed [Replace "Tiled"] $ gapSpaced 5 $ Tall nmaster delta ratio
+    full = renamed [Replace "Full"] $ gapSpaced 5 Full
+    column3 = renamed [Replace "3col"] $ gapSpaced 5 $ ThreeColMid 1 (3 / 100) (1 / 2)
     float = renamed [Replace "Float"] $ simpleFloat
-    myLayout = renamed [Replace "Spiral"] $ gapSpaced 10 $ IfMax 2 (Tall nmaster delta ratio) (spiral (6/7))
+    myLayout = renamed [Replace "Spiral"] $ gapSpaced 5 $ IfMax 2 (Tall nmaster delta ratio) (spiral (6/7))
     -- The default number of windows in the master pane
     nmaster = 1
     -- Default proportion of screen occupied by master pane
     ratio = 1 / 2
     -- Percent of screen to increment by when resizing panes
-    delta = 3 / 100 -- Gaps bewteen windows
+    delta = 3 / 100 
+    -- Gaps bewteen windows
     myGaps gap = gaps [(U, gap), (D, gap), (L, gap), (R, gap)]
     gapSpaced g = spacing g . myGaps g
     -- Per workspace layout
@@ -224,7 +225,7 @@ myLayouts =
     fullScreenToggle = mkToggle (single NBFULL)
     -- Misc
     master =
-      fixMastered (1 / 4) (1 / 2) (gapSpaced 10 $ Tall nmaster delta ratio)
+      fixMastered (1 / 4) (1 / 2) (gapSpaced 5 $ Tall nmaster delta ratio)
 
 
 --------[Startup]--------

@@ -13,8 +13,9 @@
 
   programs.rofi = {
     enable = true;
-    terminal = "xst";
-    theme = "~/.config/nixpkgs/modules/programs/rofi/rofi.rasi";
+    terminal = "alacritty";
+    #configPath = "/home/cha0xfox/0xdotfiles/users/cha0xfox/modules/programs/rofi/rofi.rasi";
+    theme = "/home/cha0xfox/0xdotfiles/users/cha0xfox/modules/programs/rofi/theme.rasi";
   };  
 /*
   systemd.user.services.pscircle = {
