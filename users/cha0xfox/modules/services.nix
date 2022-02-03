@@ -11,12 +11,13 @@
     musicDirectory = "/DATA_2/Music";
   };
 
-  programs.rofi = {
+  services.redshift = {
     enable = true;
-    terminal = "alacritty";
-    #configPath = "/home/cha0xfox/0xdotfiles/users/cha0xfox/modules/programs/rofi/rofi.rasi";
-    theme = "/home/cha0xfox/0xdotfiles/users/cha0xfox/modules/programs/rofi/theme.rasi";
-  };  
+    tray = true;
+    latitude  = "55";
+    longitude = "37";
+  };
+  
 /*
   systemd.user.services.pscircle = {
     Unit = {

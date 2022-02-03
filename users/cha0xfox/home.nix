@@ -2,9 +2,7 @@
 
 {
   imports = [
-  ./modules/redshift.nix
   ./modules/picom.nix
-  ./modules/neovim.nix
   ./modules/xmonad.nix
   ./modules/dunst.nix
   ./modules/packages.nix
@@ -12,6 +10,7 @@
   ./modules/xsession.nix
   ./modules/filemap.nix
   ./modules/services.nix
+  ./modules/programs.nix
   ./modules/configs/xresources.nix
   #./modules/emacs.nix
   ];

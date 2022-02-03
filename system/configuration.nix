@@ -134,7 +134,7 @@ in
   ];
 
   nix = {
-    autoOptimiseStore = true;
+    settings.auto-optimise-store = true;
     gc = {
       automatic = true;
       dates = "monthly";
@@ -144,7 +144,7 @@ in
       automatic = true;
       dates = [ "weekly" ];
     };
-    trustedUsers = [ "cha0xfox" "root" ];
+    settings.trusted-users = [ "cha0xfox" "root" ];
   };
 
 

@@ -39,7 +39,6 @@ in
     deluge
     openconnect
     vscode
-    obs-studio
     python
     gitstatus
     ghc
