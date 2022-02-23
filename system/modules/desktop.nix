@@ -30,7 +30,7 @@ in
     feh sxiv
     pulsemixer
     pciutils
-    virt-viewer
+    unstable.virt-viewer
     barrier
     mpv
     helvum

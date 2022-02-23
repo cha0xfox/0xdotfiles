@@ -56,8 +56,8 @@ main = do
     , startupHook = myStartupHook
     , workspaces  = withScreens 4 myWS
     , layoutHook  = myLayouts
-    , borderWidth = 0
-    , focusedBorderColor = "#bd93f9"
+    , borderWidth = 1
+    , focusedBorderColor = "#df0252"
 --    , logHook     = myLogHook
 --    , logHook     = dynamicLogWithPP xmobarPP
 --                        { ppOutput = hPutStrLn xmproc2
@@ -121,6 +121,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Copy screenshot 
 
     , ((modm,               xK_p     ), spawn "maim -s -u | tee ~/Screenshots/screen-$(date +%s).png | xclip -selection clipboard -t image/png")
+
+    , ((modm .|. shiftMask, xK_p     ), spawn "maim -st 0 | convert - -resize 1x1 -format '%[pixel:p{0,0}]' info:- | xclip -selection clipboard")
 
     -- Make window fload and center
 

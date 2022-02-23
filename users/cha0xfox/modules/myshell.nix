@@ -13,6 +13,7 @@
         update-users = "~/0xdotfiles/update-users.sh";
         update-system = "~/0xdotfiles/update-system.sh";
         soundboard = "python3 ~/0xdotfiles/users/cha0xfox/modules/scripts/kbd.py";
+        hackit = "docker run --rm -it bcbcarl/hollywood";
     };
     plugins = [
     ];

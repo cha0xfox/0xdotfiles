@@ -3,4 +3,3 @@ self: super: {
         pulseSupport = true;
     };
 }
-

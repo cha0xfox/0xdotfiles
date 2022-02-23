@@ -7,7 +7,7 @@
 let
   unstableTarball = 
     fetchTarball 
-      https://github.com/NixOs/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+      https://github.com/NixOs/nixpkgs/archive/nixos-unstable.tar.gz;
 
 in
 
@@ -18,7 +18,6 @@ in
       ./modules/desktop.nix
       ./modules/xserver.nix
       ./modules/virtualization.nix
-      #./modules/scream-ivshmem.nix
       ./modules/latex.nix
       ./modules/samba.nix
     ];

@@ -5,10 +5,10 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    libinput.mouse.accelProfile = "adaptive";
+    libinput.mouse.accelProfile = "flat";
     layout = "us,ru";
     xkbOptions = "grp:alt_shift_toggle";
-    libinput.mouse.accelSpeed = "2";
+    libinput.mouse.accelSpeed = "-1";
     inputClassSections = [ ''
       Identifier "My Mouse"
       MatchIsPointer "yes"
