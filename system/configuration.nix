@@ -1,16 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
-
-let
-  unstableTarball = 
-    fetchTarball 
-      https://github.com/NixOs/nixpkgs/archive/nixos-unstable.tar.gz;
-
-in
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -21,12 +9,6 @@ in
       ./modules/latex.nix
       ./modules/samba.nix
     ];
-  
-  nixpkgs.config.packageOverrides = pkgs: {
-    unstable = import unstableTarball {
-      config = config.nixpkgs.config;
-    };
-  };
 
   nixpkgs.config.allowUnfree = true;
   
@@ -56,9 +38,6 @@ in
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
   networking = {
     hostName = "0x";
     hostId = "ef44cfcc";
@@ -77,14 +56,8 @@ in
     ];
   };
 
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-   i18n.defaultLocale = "en_US.UTF-8";
-   console = {
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
      font = "Lat2-Terminus16";
      keyMap = "us";
    };
@@ -103,12 +76,6 @@ in
       #"default.clock.rate" = 192000;
       };
     };
-  # If you want to use JACK applications, uncomment this
-  #jack.enable = true;
-
-  # use the example session manager (no others are packaged yet so this is enabled by default,
-  # no need to redefine it in your config for now)
-  #media-session.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -133,6 +100,10 @@ in
   ];
 
   nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
     settings.auto-optimise-store = true;
     gc = {
       automatic = true;

@@ -3,7 +3,7 @@
 {
 
 environment.systemPackages = with pkgs; [
-  unstable.virt-manager
+  virt-manager
   looking-glass-client
   scream
 ];

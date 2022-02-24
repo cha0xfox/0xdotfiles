@@ -1,19 +1,9 @@
 { config, pkgs, lib, ... }:
 
 let
-  unstableTarball = 
-    fetchTarball 
-      https://github.com/NixOs/nixpkgs/archive/nixos-unstable.tar.gz;
-
   localPkgs = import ../packages { pkgs = pkgs; };
 in
 {
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    unstable = import unstableTarball {
-      config = config.nixpkgs.config;
-    };
-  };
 
   home = {
     packages = with pkgs; [
@@ -23,8 +13,8 @@ in
         ncmpcpp
         ffmpeg
         discocss
-        unstable.discord
-        obsidian
+        discord
+        #obsidian
         qjackctl
         tdesktop
         gromit-mpx
