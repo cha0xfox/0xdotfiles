@@ -50,6 +50,9 @@ in
     libwacom
     xf86_input_wacom
     busybox
+    radeon-profile
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk 
   ];
 
   fonts.fonts = with pkgs; [
@@ -72,6 +75,12 @@ in
     bash.enableCompletion = true;
     tmux.enable = true;
     neovim.defaultEditor = true;
+
   };
 
+  xdg.portal.enable = true;
+
+  services = {
+    #some services
+  };
 }

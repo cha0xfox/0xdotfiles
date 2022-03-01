@@ -17,7 +17,7 @@ font:
     # Needs to be powerline font if using zsh theme with powerline
     family: Iosevka Nerd Font 
   # Font size
-  size: 9
+  size: 10
 
 colors:
   primary:

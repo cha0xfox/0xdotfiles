@@ -23,16 +23,17 @@ in
         btrfs-progs
         liquidprompt
         lens
-        reaper
-        pfetch
-        pscircle
+        #reaper
+        neofetch
+        #pscircle
         polybar
         zathura
         bitwarden
-        ripcord
-        wmctrl
+        #ripcord
+        #wmctrl
         betterdiscordctl
         imagemagick
+        mailspring
         #razergenie openrazer-daemon
         #(pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
         #  dfVersion = "0.47.05";

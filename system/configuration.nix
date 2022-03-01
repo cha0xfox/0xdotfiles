@@ -9,8 +9,6 @@
       ./modules/latex.nix
       ./modules/samba.nix
     ];
-
-  nixpkgs.config.allowUnfree = true;
   
   ##BOOT
 
@@ -20,12 +18,12 @@
   loader.efi.canTouchEfiVariables = true;
 
   kernelParams = [ "intel_iommu=on" "kvm.ignore_msrs=1" "kvm.allow_unsafe_interrupts=1" ];
-  kernelModules = [ "kvm-intel" "v4l2loopback" ];
+  kernelModules = [ "amdgpu" "kvm-intel" "v4l2loopback" "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
   extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback
     ];
-  initrd.availableKernelModules = [ "vfio-pci" ];
-
+  initrd.availableKernelModules = [ "vfio-pci" "vfio_virqfd" "vfio_iommu_type1" "vfio"];
+  blacklistedKernelModules = [  "nvidia" "nouveau" ];
   initrd.preDeviceCommands = ''
   DEVS="0000:68:00.0 0000:68:00.1"
   for DEV in $DEVS; do

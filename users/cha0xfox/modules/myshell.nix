@@ -14,6 +14,7 @@
         update-system = "~/0xdotfiles/update-system.sh";
         soundboard = "python3 ~/0xdotfiles/users/cha0xfox/modules/scripts/kbd.py";
         hackit = "docker run --rm -it bcbcarl/hollywood";
+        myneofetch = "neofetch --ascii ~/0xdotfiles/users/cha0xfox/modules/configs/ascii-art.txt --ascii_colors 1";
     };
     plugins = [
     ];

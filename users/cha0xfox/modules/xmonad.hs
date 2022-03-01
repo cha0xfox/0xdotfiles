@@ -58,6 +58,7 @@ main = do
     , layoutHook  = myLayouts
     , borderWidth = 1
     , focusedBorderColor = "#df0252"
+    , normalBorderColor = "#282a36"
 --    , logHook     = myLogHook
 --    , logHook     = dynamicLogWithPP xmobarPP
 --                        { ppOutput = hPutStrLn xmproc2

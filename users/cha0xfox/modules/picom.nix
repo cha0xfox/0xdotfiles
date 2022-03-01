@@ -12,8 +12,8 @@
         shadowOpacity = "0.85";
 
         extraOptions = ''
-          #corner-radius = 8;
-          #round-borders = 0;
+          corner-radius = 8;
+          round-borders = 8;
           blur-method = "dual_kawase";
           blur-strength = "150";
           xinerama-shadow-crop = true;
@@ -23,11 +23,12 @@
             "class_g = 'gromit-mpx'"
           ];
           rounded-corners-exclude = [
-            "name = 'xmobar'"
+            "name = 'xmobar'",
+            "name = 'polybar'"
           ]
         '';
 
-        experimentalBackends = true;
+        #experimentalBackends = true;
 
         shadowExclude = [
           "bounding_shaped && !rounded_corners"

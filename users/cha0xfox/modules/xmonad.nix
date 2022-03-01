@@ -11,4 +11,11 @@
     };
   };
 
+  #wayland.windowManager = {
+  #  sway = {
+  #    enable = true;
+  #    config = ./configs/sway.conf
+  #  };
+  #};
+
 }

@@ -4,7 +4,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "amdgpu" ];
     libinput.mouse.accelProfile = "flat";
     layout = "us,ru";
     xkbOptions = "grp:alt_shift_toggle";
@@ -34,6 +34,9 @@
             border-color = "#bd93f9"
           '';
         };
+        setupCommands = ''
+          ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 1920x1080 --rotate normal --output DisplayPort-1 --mode 1920x1080 --pos 0x1260 --rotate normal --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 4480x797 --rotate right --output DisplayPort-3 --off --output DisplayPort-4 --mode 1920x1080 --pos 2354x0 --rotate normal --output DisplayPort-5 --off
+        '';
       };
 
   windowManager.xmonad = {
@@ -45,14 +48,6 @@
     deviceSection = ''
     Option "Coolbits" "28"
     '';
-
-    screenSection = ''
-    Option         "metamodes" "DVI-D-0: nvidia-auto-select +4480+840 {rotation=right, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, HDMI-0: nvidia-auto-select +1920+1080 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, HDMI-1: nvidia-auto-select +2240+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DP-2: nvidia-auto-select +0+1260 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
-    Option         "AllowIndirectGLXProtocol" "Off"
-    Option         "TripleBuffer" "On"
-    '';
   };
-
-  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
 }

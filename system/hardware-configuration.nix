@@ -29,10 +29,10 @@
       fsType = "ext4";
     };
 
-  fileSystems."/DATA_1" =
-    { device = "/dev/sdf1";
-      fsType = "ext4";
-    };
+  #fileSystems."/DATA_1" =
+  #  { device = "/dev/sdf1";
+  #    fsType = "ext4";
+  #  };
 
   fileSystems."/DATA_M2" =
     { device = "/dev/disk/by-uuid/66acef72-51c3-4f45-b06f-48bf5583262a";

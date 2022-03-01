@@ -35,7 +35,7 @@
 
     nixosConfigurations = {
       "0x" = lib.nixosSystem {
-        inherit system;
+        inherit system pkgs;
 
         modules = [
           ./system/configuration.nix

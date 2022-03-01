@@ -17,6 +17,10 @@
     latitude  = "55";
     longitude = "37";
   };
+
+  services.gnome-keyring = {
+    enable = true;
+  };
   
 /*
   systemd.user.services.pscircle = {
