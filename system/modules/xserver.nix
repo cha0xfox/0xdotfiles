@@ -35,7 +35,7 @@
           '';
         };
         setupCommands = ''
-          ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 1920x1080 --rotate normal --output DisplayPort-1 --mode 1920x1080 --pos 0x1260 --rotate normal --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 4480x797 --rotate right --output DisplayPort-3 --off --output DisplayPort-4 --mode 1920x1080 --pos 2354x0 --rotate normal --output DisplayPort-5 --off
+          ${pkgs.xorg.xrandr}/bin/xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 1920x1080 --rotate normal --output DisplayPort-1 --mode 1920x1080 --pos 0x1212 --rotate normal --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 4480x840 --rotate right --output DisplayPort-3 --off --output DisplayPort-4 --mode 1920x1080 --pos 2092x0 --rotate normal --output DisplayPort-5 --off
         '';
       };
 

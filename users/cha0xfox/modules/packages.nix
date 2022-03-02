@@ -7,39 +7,34 @@ in
 
   home = {
     packages = with pkgs; [
-        gnome3.adwaita-icon-theme
-        bat
-        xmobar
-        ncmpcpp
-        ffmpeg
-        discocss
-        discord
         #obsidian
-        qjackctl
-        tdesktop
-        gromit-mpx
-        spotify
-        parted
-        btrfs-progs
-        liquidprompt
-        lens
-        #reaper
-        neofetch
         #pscircle
-        polybar
-        zathura
-        bitwarden
+        #reaper
         #ripcord
         #wmctrl
+        bat
         betterdiscordctl
+        bitwarden
+        btrfs-progs
+        discocss
+        discord
+        ffmpeg
+        gnome3.adwaita-icon-theme
+        gromit-mpx
         imagemagick
+        lens
+        liquidprompt
         mailspring
-        #razergenie openrazer-daemon
-        #(pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
-        #  dfVersion = "0.47.05";
-        #  enableIntro = false;
-        #  enableFPS = true;
-        #})
+        ncmpcpp
+        neofetch
+        parted
+        polybar
+        qjackctl
+        spotify
+        tdesktop
+        virt-viewer
+        xmobar
+        zathura
     ] ++ [
      #localPkgs.boomer
     ];

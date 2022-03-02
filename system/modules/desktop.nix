@@ -30,7 +30,6 @@ in
     feh sxiv
     pulsemixer
     pciutils
-    virt-viewer
     barrier
     mpv
     helvum
@@ -39,7 +38,6 @@ in
     deluge
     openconnect
     vscode
-    python
     gitstatus
     ghc
     easyeffects

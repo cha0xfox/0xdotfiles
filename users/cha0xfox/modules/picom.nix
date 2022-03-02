@@ -23,7 +23,6 @@
             "class_g = 'gromit-mpx'"
           ];
           rounded-corners-exclude = [
-            "name = 'xmobar'",
             "name = 'polybar'"
           ]
         '';
@@ -46,6 +45,7 @@
           "100:class_g   *?= 'Discord'"
           "100:class_g   *?= 'mpv'"
           "100:class_g   *?= 'virt-viewer'"
+          "100:class_g   *?= 'mailspring'"
         ];
 
         package = pkgs.picom.overrideAttrs(o: {
