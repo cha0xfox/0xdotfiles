@@ -8,6 +8,7 @@
       ./modules/virtualization.nix
       ./modules/latex.nix
       ./modules/samba.nix
+      ./modules/distrobox.nix
     ];
   
   ##BOOT

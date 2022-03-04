@@ -12,7 +12,6 @@
   ./modules/services.nix
   ./modules/programs.nix
   ./modules/configs/xresources.nix
-  #./modules/emacs.nix
   ];
 
   # Let Home Manager install and manage itself.

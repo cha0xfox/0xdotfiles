@@ -5,9 +5,10 @@
       nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
       home-manager.url = "github:nix-community/home-manager";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
+      emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = { self, nixpkgs, home-manager, emacs-overlay, ... }: 
   let
     system = "x86_64-linux";
 

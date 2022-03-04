@@ -5,7 +5,7 @@
   services.picom = {
         enable = true;
         #activeOpacity = "0.90";
-        inactiveOpacity = "0.85";
+        inactiveOpacity = "0.75";
         backend = "glx";
         blur = true;
         shadow = true;
@@ -15,7 +15,7 @@
           corner-radius = 8;
           round-borders = 8;
           blur-method = "dual_kawase";
-          blur-strength = "150";
+          blur-strength = "85";
           xinerama-shadow-crop = true;
           xrender-sync-fence = true;
           blur-background-exclude = [
@@ -46,6 +46,7 @@
           "100:class_g   *?= 'mpv'"
           "100:class_g   *?= 'virt-viewer'"
           "100:class_g   *?= 'mailspring'"
+          "100:class_g   *?= 'element'"
         ];
 
         package = pkgs.picom.overrideAttrs(o: {

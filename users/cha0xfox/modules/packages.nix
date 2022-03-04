@@ -18,6 +18,7 @@ in
         btrfs-progs
         discocss
         discord
+        element-desktop
         ffmpeg
         gnome3.adwaita-icon-theme
         gromit-mpx
@@ -30,11 +31,15 @@ in
         parted
         polybar
         qjackctl
+        ripgrep
         spotify
         tdesktop
         virt-viewer
         xmobar
         zathura
+        (emacsWithPackages (epkgs: [
+          epkgs.neotree
+        ]))
     ] ++ [
      #localPkgs.boomer
     ];

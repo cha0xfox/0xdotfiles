@@ -6,6 +6,7 @@ let
     evdev
     tkinter
     pillow
+    pyautogui
     # other python packages you want
   ]; 
   python-with-my-packages = python3.withPackages my-python-packages;
@@ -15,7 +16,7 @@ in
 
   environment.systemPackages = with pkgs; [
     ntfs3g
-    cv
+    progress
     unar unzip p7zip
     xclip
     youtube-dl

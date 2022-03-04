@@ -43,6 +43,7 @@ import XMonad.Hooks.ManageHelpers
   , isInProperty
   )
 import Distribution.Simple (KnownExtension(MultiWayIf))
+import Text.XHtml (h1)
 
 
 --------[main]--------
@@ -64,8 +65,8 @@ main = do
 --                        { ppOutput = hPutStrLn xmproc2
 --                        , ppTitle = xmobarColor "green" "" . shorten 50
 --                        }
-    , manageHook  = myManageHook <+> manageDocks
-    , handleEventHook = handleEventHook def <+> fullscreenEventHook
+    , manageHook  = manageDocks <+> namedScratchpadManageHook scratchpads
+    , handleEventHook = fullscreenEventHook
     }
 
 
@@ -175,8 +176,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
     -- Scraptchpads
-    , ((modm .|. shiftMask, xK_a), namedScratchpadAction myScratchPads "terminal")
-    , ((modm .|. shiftMask, xK_n), namedScratchpadAction myScratchPads "ncmpcpp")
+    , ((modm .|. shiftMask, xK_a), namedScratchpadAction scratchpads "term")
 
     ]
     ++
@@ -242,32 +242,9 @@ myStartupHook = do
 
 --------[Scratchpads]--------
 
-myScratchPads :: [NamedScratchpad]
-myScratchPads =
-  [
-      NS "ncmpcpp"              launchMocp             (title =? "ncmpcpp")    (customFloating $ W.RationalRect 0.15 0.15 0.7 0.7)
-    , NS "terminal"             launchTerminal         (title =? "scratchpad") (customFloating $ W.RationalRect 0.15 0.15 0.7 0.7)
+-- scratchPads
+scratchpads :: [NamedScratchpad]
+scratchpads = [
+    NS "term" "alacritty --class scratchpad" (resource =? "scratchpad")
+        (customFloating $ W.RationalRect (2/5) (2/6) (1/3) (1/3))
   ]
-  where
-    launchMocp     = myTerminal ++ " -t ncmpcpp -e ncmpcpp"
-    launchTerminal = myTerminal ++ " -t scratchpad -e fish"
-
-
---------[Manage]--------
-
-myManageHook = composeAll
-    [ className =? "Barrier"        --> doFloat
-    , resource  =? "kdesktop"       --> doIgnore 
-    , resource  =? "scratchpad"       --> floating 
-    ]        
-        where floating = customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3)
-
---------[Event]--------
--- deprecated
-myHandleEventHook :: Event -> X All
-myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "scratchpad" --> floating)
-        where floating = customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3)
-
---------[Log hook]--------
---myLogHook :: D.Client -> PP
---myLogHook dbus = namedScratchpadFilterOutWorkspacePP $ def { ppOutput = dbusOutput dbus }

@@ -13,8 +13,10 @@
         update-users = "~/0xdotfiles/update-users.sh";
         update-system = "~/0xdotfiles/update-system.sh";
         soundboard = "python3 ~/0xdotfiles/users/cha0xfox/modules/scripts/kbd.py";
+        macrorun = "python3 ~/0xdotfiles/users/cha0xfox/modules/scripts/kbd_wrk.py";
         hackit = "docker run --rm -it bcbcarl/hollywood";
         myneofetch = "neofetch --ascii ~/0xdotfiles/users/cha0xfox/modules/configs/ascii-art.txt --ascii_colors 1";
+        doom = "~/.emacs.d/bin/doom";
     };
     plugins = [
     ];
