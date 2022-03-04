@@ -15,43 +15,44 @@ in
 {
 
   environment.systemPackages = with pkgs; [
-    ntfs3g
-    progress
-    unar unzip p7zip
-    xclip
-    youtube-dl
-    lm_sensors
-    htop
-    fd fzf
-    bpytop
-    linuxPackages.cpupower
-    pcmanfm
-    git
-    dconf
-    feh sxiv
-    pulsemixer
-    pciutils
-    barrier
-    mpv
-    helvum
-    chromium
-    maim
-    deluge
-    openconnect
-    vscode
-    gitstatus
-    ghc
-    easyeffects
-    python-with-my-packages
-    libcap
-    thunderbird
     alacritty
-    libwacom
-    xf86_input_wacom
+    barrier
+    bpytop
     busybox
+    chromium
+    dconf
+    deluge
+    easyeffects
+    fd fzf
+    feh sxiv
+    ghc
+    git
+    gitstatus
+    helvum
+    htop
+    libcap
+    libwacom
+    linuxPackages.cpupower
+    lm_sensors
+    maim
+    mpv
+    nix-prefetch-git
+    ntfs3g
+    openconnect
+    pciutils
+    pcmanfm
+    progress
+    pulsemixer
+    python-with-my-packages
     radeon-profile
+    thunderbird
+    unar unzip p7zip
+    vscode
+    xclip
     xdg-desktop-portal
-    xdg-desktop-portal-gtk 
+    xdg-desktop-portal-gtk
+    xf86_input_wacom
+    youtube-dl
   ];
 
   fonts.fonts = with pkgs; [

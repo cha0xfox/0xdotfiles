@@ -3,12 +3,12 @@
 let
   distrobox = pkgs.stdenvNoCC.mkDerivation rec {
     pname = "distrobox";
-    version = "1.2.12-dev";
+    version = "1.2.13";
 
     src = pkgs.fetchgit {
       url = "https://github.com/89luca89/${pname}";
-      rev = "aa1fe3769a054c90ffb30be577296b65640f0bdb";
-      hash = "sha256-CGeK8HtYZDnDXCh8frVb+MPcLz8UlRBi/1qUBwZ9jeQ=";
+      rev = "eca80a069d6f9c71e7b5c350eae9c8ef4a0e07d2";
+      sha256 = "0gs85vjrgsfxq86m2hy72h4z9i1zf6jznqmds88rnag2gxalrrk4";
     };
 
     phases = [ "unpackPhase" "installPhase" ];
@@ -24,8 +24,8 @@ in
 {
     environment.systemPackages = [ pkgs.xorg.xhost distrobox ];
     virtualisation.podman.enable = true;
-    virtualisation.podman.dockerCompat = true;
     environment.shellInit = ''
     [ -n "$DISPLAY" ] && xhost +si:localuser:$USER || true
+    clear
     '';
 }

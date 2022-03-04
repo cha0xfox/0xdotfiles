@@ -17,6 +17,7 @@
         hackit = "docker run --rm -it bcbcarl/hollywood";
         myneofetch = "neofetch --ascii ~/0xdotfiles/users/cha0xfox/modules/configs/ascii-art.txt --ascii_colors 1";
         doom = "~/.emacs.d/bin/doom";
+        runarch = "distrobox-enter Arch -- zsh";
     };
     plugins = [
     ];
