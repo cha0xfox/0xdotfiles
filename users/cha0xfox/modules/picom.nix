@@ -23,7 +23,8 @@
             "class_g = 'gromit-mpx'"
           ];
           rounded-corners-exclude = [
-            "name = 'polybar'"
+            "class_g *?= 'polybar'",
+            "class_g *?= 'rofi'"
           ]
         '';
 
@@ -34,7 +35,7 @@
         ];
 
         fade = true;
-        fadeDelta = 5;
+        fadeDelta = 4;
         vSync = true;
         opacityRule = [
           "100:class_g   *?= 'Chromium-browser'"
