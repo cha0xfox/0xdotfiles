@@ -4,7 +4,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/desktop.nix
-      ./modules/xserver.nix
+      #./modules/xserver.nix
+      ./modules/wayland.nix
       ./modules/virtualization.nix
       ./modules/latex.nix
       ./modules/samba.nix
@@ -19,19 +20,19 @@
   loader.efi.canTouchEfiVariables = true;
 
   kernelParams = [ "intel_iommu=on" "kvm.ignore_msrs=1" "kvm.allow_unsafe_interrupts=1" ];
-  kernelModules = [ "amdgpu" "kvm-intel" "v4l2loopback" "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" "nvidia" ];
+  kernelModules = [ "amdgpu" "kvm-intel" "v4l2loopback" "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
   extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback
     ];
-  initrd.availableKernelModules = [ "vfio-pci" "vfio_virqfd" "vfio_iommu_type1" "vfio"];
-  #blacklistedKernelModules = [  "nvidia" "nouveau" ];
-  #initrd.preDeviceCommands = ''
-  #DEVS="0000:68:00.0 0000:68:00.1"
-  #for DEV in $DEVS; do
-  #  echo "vfio-pci" > /sys/bus/pci/devices/$DEV/driver_override
-  #done
-  #modprobe -i vfio-pci
-  #'';
+  initrd.availableKernelModules = [ "vfio-pci" "vfio_virqfd" "vfio_iommu_type1" "vfio" ];
+  blacklistedKernelModules = [ "nouveau" ];
+  initrd.preDeviceCommands = ''
+  DEVS="0000:68:00.0 0000:68:00.1"
+  for DEV in $DEVS; do
+    echo "vfio-pci" > /sys/bus/pci/devices/$DEV/driver_override
+  done
+  modprobe -i vfio-pci
+  '';
   };
 
   # Set your time zone.
