@@ -12,3 +12,5 @@ for event in dev.read_loop():
         pg.typewrite("b4K3eFhC9axwUWBQ")
       if key.keycode == 'KEY_D':
         pg.typewrite("PPy7B7aSuQsfsTS7")
+      if key.keycode == 'KEY_SPACE':
+        os.system('bash /home/cha0xfox/0xdotfiles/users/cha0xfox/modules/scripts/ytmpv.sh')

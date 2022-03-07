@@ -16,8 +16,8 @@
           round-borders = 8;
           blur-method = "dual_kawase";
           blur-strength = "85";
-          xinerama-shadow-crop = true;
-          xrender-sync-fence = true;
+          glx-no-stencil = true ;
+          glx-no-rebind-pixmap = true ;
           blur-background-exclude = [
             "class_g = 'slop'",
             "class_g = 'gromit-mpx'"

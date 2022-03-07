@@ -2,16 +2,16 @@
 
 {
   imports = [
-  #./modules/picom.nix
-  #./modules/xmonad.nix
-  #./modules/dunst.nix
+  ./modules/picom.nix
+  ./modules/xmonad.nix
+  ./modules/dunst.nix
   ./modules/packages.nix
   ./modules/myshell.nix
-  #./modules/xsession.nix
+  ./modules/xsession.nix
   ./modules/filemap.nix
-  #./modules/services.nix
+  ./modules/services.nix
   ./modules/programs.nix
-  #./modules/configs/xresources.nix
+  ./modules/configs/xresources.nix
   ];
 
   # Let Home Manager install and manage itself.

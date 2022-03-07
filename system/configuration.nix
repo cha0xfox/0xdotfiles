@@ -4,8 +4,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/desktop.nix
-      #./modules/xserver.nix
-      ./modules/wayland.nix
+      ./modules/xserver.nix
+      #./modules/wayland.nix
       ./modules/virtualization.nix
       ./modules/latex.nix
       ./modules/samba.nix
