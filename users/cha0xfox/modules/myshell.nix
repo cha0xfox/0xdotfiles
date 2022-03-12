@@ -22,11 +22,6 @@
     };
     plugins = [
     ];
-  loginShellInit = ''
-    if test (id --user $USER) -ge 1000 && test (tty) = "/dev/tty1"
-      exec sway
-    end
-  '';
   };
 
   home.packages = with pkgs; [

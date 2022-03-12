@@ -11,6 +11,7 @@
   ./modules/filemap.nix
   ./modules/services.nix
   ./modules/programs.nix
+  #./modules/sway.nix
   ./modules/configs/xresources.nix
   ];
 

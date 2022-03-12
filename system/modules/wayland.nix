@@ -33,5 +33,13 @@
   };
 
   programs.waybar.enable = true;
+  programs.xwayland.enable = true;
+
+  services.xserver = {
+    enable = true;
+    videoDrivers = [
+      "amd"
+    ];
+  };
 
 }

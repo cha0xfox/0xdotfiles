@@ -20,12 +20,14 @@ in
         discord
         element-desktop
         ffmpeg
+        gimp
         gnome3.adwaita-icon-theme
         gromit-mpx
         imagemagick
         lens
         liquidprompt
         mailspring
+        mumble
         ncmpcpp
         neofetch
         parted

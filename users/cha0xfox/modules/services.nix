@@ -4,11 +4,11 @@
     enable = true;
     extraConfig = ''
       audio_output {
-        type "alsa"
-        name "alsa"
+        type "pipewire"
+        name "PipeWire Sound Server"
         server "127.0.0.1"
       }  '';
-    musicDirectory = "/DATA_2/Music";
+    musicDirectory = "/mnt/Documents/Music";
   };
 
   services.redshift = {
