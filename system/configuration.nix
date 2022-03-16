@@ -19,7 +19,7 @@
   loader.systemd-boot.enable = true;
   loader.efi.canTouchEfiVariables = true;
 
-  kernelParams = [ "intel_iommu=on" "kvm.ignore_msrs=1" "kvm.allow_unsafe_interrupts=1" ];
+  kernelParams = [ "intel_iommu=on" "kvm.ignore_msrs=1" "kvm.allow_unsafe_interrupts=1" "mitigations=off" ];
   kernelModules = [ "amdgpu" "kvm-intel" "v4l2loopback" "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
   extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback

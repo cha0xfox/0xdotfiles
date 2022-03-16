@@ -1,7 +1,7 @@
 import os
 import pyautogui as pg
 from evdev import InputDevice, categorize, ecodes
-dev = InputDevice('/dev/input/event260')
+dev = InputDevice('/dev/input/event258')
 dev.grab()
 
 for event in dev.read_loop():
@@ -13,4 +13,4 @@ for event in dev.read_loop():
       if key.keycode == 'KEY_D':
         pg.typewrite("PPy7B7aSuQsfsTS7")
       if key.keycode == 'KEY_SPACE':
-        os.system('bash /home/cha0xfox/0xdotfiles/users/cha0xfox/modules/scripts/ytmpv.sh')
+        os.system('bash /home/cha0xfox/0xdotfiles/users/cha0xfox/modules/scripts/ytmpv.sh &')

@@ -1,6 +1,6 @@
 import os
 from evdev import InputDevice, categorize, ecodes
-dev = InputDevice('/dev/input/event260')
+dev = InputDevice('/dev/input/event258')
 dev.grab()
 
 for event in dev.read_loop():
