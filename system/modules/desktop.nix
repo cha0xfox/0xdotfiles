@@ -6,7 +6,8 @@ let
     evdev
     tkinter
     pillow
-    pyautogui
+    pynput
+    #pyautogui
     # other python packages you want
   ]; 
   python-with-my-packages = python3.withPackages my-python-packages;
@@ -52,7 +53,8 @@ in
     xdg-desktop-portal
     xdg-desktop-portal-gtk
     xf86_input_wacom
-    youtube-dl
+    #youtube-dl
+    yt-dlp
   ];
 
   fonts.fonts = with pkgs; [

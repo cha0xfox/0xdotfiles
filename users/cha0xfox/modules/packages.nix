@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  localPkgs = import ../packages { pkgs = pkgs; };
+        localPkgs = import ../packages { pkgs = pkgs; };
 in
 {
 
@@ -12,10 +12,12 @@ in
         #reaper
         #ripcord
         #wmctrl
+        #spotify
         bat
         betterdiscordctl
         bitwarden
         btrfs-progs
+        copyq
         discocss
         discord
         element-desktop
@@ -31,14 +33,17 @@ in
         ncmpcpp
         neofetch
         parted
+        pandoc
         polybar
         qjackctl
         ripgrep
-        spotify
         tdesktop
         virt-viewer
         xmobar
+        ytmdl
         zathura
+        zoom-us
+        spice-gtk
         (emacsWithPackages (epkgs: [
           epkgs.neotree
         ]))

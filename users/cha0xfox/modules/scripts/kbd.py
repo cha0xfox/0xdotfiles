@@ -1,6 +1,6 @@
 import os
 from evdev import InputDevice, categorize, ecodes
-dev = InputDevice('/dev/input/event258')
+dev = InputDevice('/dev/input/event260')
 dev.grab()
 
 for event in dev.read_loop():
@@ -45,3 +45,17 @@ for event in dev.read_loop():
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh kuku.mp3 &')
       if key.keycode == 'KEY_H':
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh kuku2.mp3 &')
+      if key.keycode == 'KEY_UP':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/yes.mp3 &')
+      if key.keycode == 'KEY_DOWN':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/no.mp3 &')
+      if key.keycode == 'KEY_LEFT':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/succ.mp3 &')
+      if key.keycode == 'KEY_RIGHT':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/scream.mp3 &')
+      if key.keycode == 'KEY_RIGHTCTRL':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/kringe.mp3 &')
+      if key.keycode == 'KEY_RIGHTSHIFT':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/megagood.mp3 &')
+      if key.keycode == 'KEY_SEMICOLON':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/whatisit.mp3 &')

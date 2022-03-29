@@ -7,7 +7,7 @@
     shellAliases = {
         mpvp = "mpv --no-video --loop";
         barrierrun = "barriers -f --no-tray --name 0x --disable-crypto -c ~/.config/barrier.conf";
-        ytdownload = "youtube-dl -x --audio-format mp3";
+        ytdownload = "yt-dlp -x --audio-format mp3";
         apply-users = "~/0xdotfiles/apply-users.sh";
         apply-system = "~/0xdotfiles/apply-system.sh";
         update-users = "~/0xdotfiles/update-users.sh";

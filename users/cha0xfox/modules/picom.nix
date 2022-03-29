@@ -4,7 +4,7 @@
 
   services.picom = {
         enable = true;
-        #activeOpacity = "0.90";
+        activeOpacity = "0.90";
         inactiveOpacity = "0.75";
         backend = "glx";
         blur = true;
@@ -15,7 +15,7 @@
           corner-radius = 8;
           round-borders = 8;
           blur-method = "dual_kawase";
-          blur-strength = "85";
+          blur-strength = "100";
           glx-no-stencil = true ;
           glx-no-rebind-pixmap = true ;
           blur-background-exclude = [
@@ -42,12 +42,12 @@
           "100:class_g   *?= 'Firefox'"
           "100:class_g   *?= 'Kotatogram'"
           "100:class_g   *?= 'Telegram'"
-          "100:class_g   *?= 'emacs'"
+          #"100:class_g   *?= 'emacs'"
           "100:class_g   *?= 'Discord'"
           "100:class_g   *?= 'mpv'"
           "100:class_g   *?= 'virt-viewer'"
-          "100:class_g   *?= 'mailspring'"
-          "100:class_g   *?= 'element'"
+          #"100:class_g   *?= 'mailspring'"
+          #"100:class_g   *?= 'element'"
         ];
 
         package = pkgs.picom.overrideAttrs(o: {

@@ -188,4 +188,9 @@
 
        :config
        ;;literate
-       (default +bindings +smartparens))
+       (default +bindings +smartparens)
+
+       (ligatures +extra +fira)
+
+
+       )
