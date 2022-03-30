@@ -1,7 +1,7 @@
 import os
 from pynput.keyboard import Key, Controller
 from evdev import InputDevice, categorize, ecodes
-dev = InputDevice('/dev/input/event260')
+dev = InputDevice('/dev/input/event258')
 dev.grab()
 
 keyboard = Controller()
