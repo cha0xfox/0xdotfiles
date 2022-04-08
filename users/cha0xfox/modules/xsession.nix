@@ -31,4 +31,10 @@
       package = pkgs.papirus-icon-theme;
     };
   };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style.package = pkgs.dracula-theme;
+  };
 }

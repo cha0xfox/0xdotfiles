@@ -7,10 +7,10 @@ in
 
   home = {
     packages = with pkgs; [
-        #obsidian
+        obsidian
         #pscircle
         #reaper
-        #ripcord
+        ripcord
         #wmctrl
         #spotify
         bat
@@ -39,6 +39,9 @@ in
         ripgrep
         tdesktop
         virt-viewer
+        libfm
+        pcmanfm
+        gvfs
         xmobar
         ytmdl
         zathura

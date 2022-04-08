@@ -41,7 +41,7 @@ in
     ntfs3g
     openconnect
     pciutils
-    pcmanfm
+    #pcmanfm
     progress
     pulsemixer
     python-with-my-packages
