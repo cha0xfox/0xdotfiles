@@ -4,6 +4,7 @@
   imports = [
   ./modules/picom.nix
   ./modules/xmonad.nix
+  #./modules/windowmanager.nix
   ./modules/dunst.nix
   ./modules/packages.nix
   ./modules/myshell.nix

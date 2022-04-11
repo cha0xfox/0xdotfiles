@@ -28,7 +28,7 @@
         stateVersion = "21.05";
         configuration = {
           imports = [
-            ./users/cha0xfox/home.nix
+            /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
           ];
         };
       };

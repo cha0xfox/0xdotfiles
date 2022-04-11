@@ -44,7 +44,7 @@ in
         gvfs
         xmobar
         ytmdl
-        zathura
+        #zathura
         zoom-us
         spice-gtk
         (emacsWithPackages (epkgs: [

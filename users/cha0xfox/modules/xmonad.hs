@@ -65,7 +65,7 @@ main = do
 --                        { ppOutput = hPutStrLn xmproc2
 --                        , ppTitle = xmobarColor "green" "" . shorten 50
 --                        }
-    , manageHook  = manageDocks <+> namedScratchpadManageHook scratchpads
+    , manageHook  = myManageHook <+> manageDocks <+> namedScratchpadManageHook scratchpads
     , handleEventHook = fullscreenEventHook
     }
 
@@ -248,3 +248,23 @@ scratchpads = [
     NS "term" "alacritty --class scratchpad" (resource =? "scratchpad")
         (customFloating $ W.RationalRect (2/5) (2/6) (1/3) (1/3))
   ]
+
+
+
+--------[Managehook]--------
+
+myManageHook = composeAll . concat $
+    [ [isDialog --> doCenterFloat]
+    , [className =? c --> doCenterFloat | c <- myCFloats]
+    , [title =? t --> doCenterFloat | t <- myTFloats]
+    , [resource =? r --> doFloat | r <- myRFloats]
+    , [resource =? i --> doIgnore | i <- myIgnores]
+    ]
+    where
+		myCFloats = ["alacritty-float", "MPlayer", "mpv",
+					"Gimp", "feh", "Viewnior", "Gpicview",
+					"Kvantum Manager", "qt5ct", "VirtualBox Manager", "qemu", "Qemu-system-x86_64",
+					"Lxappearance", "Nitrogen", "Arandr", "Pavucontrol", "Xfce4-power-manager-settings", "Nm-connection-editor"]
+		myTFloats = ["Downloads", "Save As...", "About : Aditya Shakya", "Getting Started"]
+		myRFloats = []
+		myIgnores = ["desktop_window"]
