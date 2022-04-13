@@ -15,6 +15,7 @@ in
         #spotify
         bat
         betterdiscordctl
+        bottles
         bitwarden
         btrfs-progs
         copyq
@@ -26,7 +27,7 @@ in
         gnome3.adwaita-icon-theme
         gromit-mpx
         imagemagick
-        lens
+        #lens
         liquidprompt
         mailspring
         mumble
