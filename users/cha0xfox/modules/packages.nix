@@ -27,6 +27,7 @@ in
         gnome3.adwaita-icon-theme
         gromit-mpx
         imagemagick
+        teams
         #lens
         liquidprompt
         mailspring

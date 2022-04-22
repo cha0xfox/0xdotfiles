@@ -40,6 +40,7 @@ in
     nix-prefetch-git
     ntfs3g
     openconnect
+    openvpn
     pciutils
     #pcmanfm
     progress

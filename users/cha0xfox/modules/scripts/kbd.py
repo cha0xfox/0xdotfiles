@@ -59,3 +59,5 @@ for event in dev.read_loop():
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/megagood.mp3 &')
       if key.keycode == 'KEY_SEMICOLON':
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/whatisit.mp3 &')
+      if key.keycode == 'KEY_K':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh keyboard2.mp3 &')

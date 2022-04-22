@@ -10,6 +10,7 @@
         #blur = true;
         #shadow = true;
         #shadowOpacity = "0.85";
+        vSync = true;
         experimentalBackends = true;
 
         extraOptions = ''

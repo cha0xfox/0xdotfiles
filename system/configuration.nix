@@ -7,7 +7,7 @@
       ./modules/xserver.nix
       #./modules/wayland.nix
       ./modules/virtualization.nix
-      ./modules/latex.nix
+      #./modules/latex.nix
       ./modules/samba.nix
       ./modules/distrobox.nix
     ];
@@ -37,6 +37,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
+  time.hardwareClockInLocalTime = true;
 
   networking = {
     hostName = "0x";
