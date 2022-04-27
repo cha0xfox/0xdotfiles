@@ -38,6 +38,7 @@ in
         pandoc
         polybar
         qjackctl
+        steam
         ripgrep
         tdesktop
         virt-viewer
@@ -46,7 +47,7 @@ in
         gvfs
         xmobar
         ytmdl
-        #zathura
+        zathura
         zoom-us
         spice-gtk
         (emacsWithPackages (epkgs: [
