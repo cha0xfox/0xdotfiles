@@ -38,7 +38,6 @@ in
         pandoc
         polybar
         qjackctl
-        steam
         ripgrep
         tdesktop
         virt-viewer

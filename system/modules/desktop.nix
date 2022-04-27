@@ -78,7 +78,7 @@ in
     bash.enableCompletion = true;
     tmux.enable = true;
     neovim.defaultEditor = true;
-
+    steam.enable = true;
   };
 
   xdg.portal.enable = true;
