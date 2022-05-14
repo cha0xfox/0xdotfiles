@@ -61,3 +61,15 @@ for event in dev.read_loop():
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh Sound2/whatisit.mp3 &')
       if key.keycode == 'KEY_K':
         os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh keyboard2.mp3 &')
+      if key.keycode == 'KEY_1':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh pelo1.mp3 &')
+      if key.keycode == 'KEY_2':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh pelo2.mp3 &')
+      if key.keycode == 'KEY_3':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh pelo3.mp3 &')
+      if key.keycode == 'KEY_4':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh pelo4.mp3 &')
+      if key.keycode == 'KEY_5':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh pelo5.mp3 &')
+      if key.keycode == 'KEY_6':
+        os.system('bash /home/cha0xfox/.config/nixpkgs/modules/scripts/soundbrd.sh pelo6.mp3 &')

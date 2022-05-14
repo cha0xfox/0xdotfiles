@@ -7,8 +7,8 @@ let
 
     src = pkgs.fetchgit {
       url = "https://github.com/89luca89/${pname}";
-      rev = "eca80a069d6f9c71e7b5c350eae9c8ef4a0e07d2";
-      sha256 = "0gs85vjrgsfxq86m2hy72h4z9i1zf6jznqmds88rnag2gxalrrk4";
+      rev = "872fb5fb65dcaab243e64b9357a9f0d10d2c4aab";
+      sha256 = "1jf2z2jpfyzb0iqgkn8d75ij6wl4zrjb4x0s42li4vxr0i0hk3nx";
     };
 
     phases = [ "unpackPhase" "installPhase" ];

@@ -4,13 +4,12 @@
   xsession = {
     enable = true;
 
-    pointerCursor ={
-      package = pkgs.capitaine-cursors;
-      name = "capitaine-cursors";
-    };
+    #pointerCursor ={
+    #  package = pkgs.capitaine-cursors;
+    #  name = "capitaine-cursors";
+    #};
     initExtra = ''
     xset -dpms s off
-    xsetroot -cursor_name capitaine-cursors
 
     nvidia-settings -a '[gpu:0]/GPUFanControlState=1' -a '[fan:0]/GPUTargetFanSpeed=50'
     '';
