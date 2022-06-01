@@ -19,6 +19,7 @@ in
         bitwarden
         btrfs-progs
         copyq
+        carla
         discocss
         discord
         element-desktop
@@ -27,7 +28,7 @@ in
         gnome3.adwaita-icon-theme
         gromit-mpx
         imagemagick
-        teams
+        # teams
         #lens
         liquidprompt
         mailspring
@@ -47,7 +48,7 @@ in
         xmobar
         ytmdl
         zathura
-        zoom-us
+        # zoom-us
         spice-gtk
         (emacsWithPackages (epkgs: [
           epkgs.neotree

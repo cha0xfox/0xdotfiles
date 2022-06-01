@@ -111,6 +111,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm,               xK_d     ), spawn "rofi -matching fuzzy rofi -show drun -modi drun,run -show-icons")
     , ((modm .|. shiftMask, xK_d     ), spawn "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/shutmenu.sh")
+    , ((modm .|. shiftMask, xK_f     ), spawn "rofi -lines 10 -padding 0 -show search -modi search:~/0xdotfiles/users/cha0xfox/modules/scripts/rofi-web-search.py -i -p 'Search: '")
 
     -- Restart xmonad
 
@@ -246,7 +247,7 @@ myStartupHook = do
 scratchpads :: [NamedScratchpad]
 scratchpads = [
     NS "term" "alacritty --class scratchpad" (resource =? "scratchpad")
-        (customFloating $ W.RationalRect (2/5) (2/6) (1/3) (1/3))
+        (customFloating $ W.RationalRect (1/6) (0.01) (2/3) (2/3))
   ]
 
 

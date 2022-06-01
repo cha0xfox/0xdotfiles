@@ -22,7 +22,7 @@ in
     busybox
     chromium
     dconf
-    deluge
+    direnv
     easyeffects
     fd fzf
     feh sxiv
@@ -47,7 +47,7 @@ in
     pulsemixer
     python-with-my-packages
     radeon-profile
-    thunderbird
+    # thunderbird
     unar unzip p7zip
     vscode
     xclip
