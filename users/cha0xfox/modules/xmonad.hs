@@ -33,6 +33,7 @@ import XMonad.Hooks.InsertPosition
   , insertPosition
   )
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageHelpers
   ( (-?>)
   , composeOne
@@ -90,7 +91,7 @@ myWS = [webWs, devWs, comWs, wrkWs, sysWs, etcWs]
 --------------------------
 
 myFish = "alacritty"
-myTerminal = "alacritty"
+myTerminal = "alacritty --class=floatterm"
 
 
 --------[functions]--------
@@ -105,7 +106,9 @@ centerWindow win = do
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [
-    ((modm .|. shiftMask, xK_Return), spawn myFish)
+      ((modm .|. shiftMask, xK_Return), spawn myFish)
+    -- spawn floating terminal
+    , ((modm              , xK_Return), spawn myTerminal)
 
     -- Launcher
 
@@ -247,7 +250,7 @@ myStartupHook = do
 scratchpads :: [NamedScratchpad]
 scratchpads = [
     NS "term" "alacritty --class scratchpad" (resource =? "scratchpad")
-        (customFloating $ W.RationalRect (1/6) (0.01) (2/3) (2/3))
+        (customFloating $ W.RationalRect (0.2) (0.1) (0.6) (0.7))
   ]
 
 
@@ -262,10 +265,7 @@ myManageHook = composeAll . concat $
     , [resource =? i --> doIgnore | i <- myIgnores]
     ]
     where
-		myCFloats = ["alacritty-float", "MPlayer", "mpv",
-					"Gimp", "feh", "Viewnior", "Gpicview",
-					"Kvantum Manager", "qt5ct", "VirtualBox Manager", "qemu", "Qemu-system-x86_64",
-					"Lxappearance", "Nitrogen", "Arandr", "Pavucontrol", "Xfce4-power-manager-settings", "Nm-connection-editor"]
-		myTFloats = ["Downloads", "Save As...", "About : Aditya Shakya", "Getting Started"]
+		myCFloats = ["alacritty-float", "MPlayer", "mpv",	"Gimp", "feh", "Viewnior", "Gpicview", "Kvantum Manager", "qt5ct", "VirtualBox Manager", "qemu", "Qemu-system-x86_64", "Lxappearance", "Nitrogen", "Arandr", "Pavucontrol", "Xfce4-power-manager-settings", "Nm-connection-editor"]
+		myTFloats = ["Downloads", "Save As...", "Getting Started", "floatterm"]
 		myRFloats = []
 		myIgnores = ["desktop_window"]
