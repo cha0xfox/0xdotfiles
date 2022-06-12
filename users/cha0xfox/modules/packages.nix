@@ -21,7 +21,7 @@ in
         copyq
         carla
         discocss
-        discord
+        stable.discord
         element-desktop
         ffmpeg
         gimp
