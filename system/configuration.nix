@@ -15,7 +15,7 @@
   ##BOOT
 
   boot = {
-  kernelPackages = pkgs.stable.linuxPackages_zen;
+  kernelPackages = pkgs.linuxPackages_zen;#pkgs.stable.linuxPackages_zen;
   loader.systemd-boot.enable = true;
   loader.efi.canTouchEfiVariables = true;
 
