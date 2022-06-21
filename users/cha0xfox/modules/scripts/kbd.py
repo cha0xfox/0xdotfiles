@@ -1,6 +1,6 @@
 import os
 from evdev import InputDevice, categorize, ecodes
-dev = InputDevice('/dev/input/event258')
+dev = InputDevice('/dev/input/by-id/usb-SINO_WEALTH_Mechanical_Keyboard-event-kbd')
 dev.grab()
 
 for event in dev.read_loop():

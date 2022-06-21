@@ -7,9 +7,9 @@
         activeOpacity = "0.9";
         inactiveOpacity = "0.75";
         backend = "glx";
-        #blur = true;
-        #shadow = true;
-        #shadowOpacity = "0.85";
+        # blur = true;
+        # shadow = true;
+        # shadowOpacity = "0.85";
         vSync = true;
         experimentalBackends = true;
 
@@ -54,7 +54,7 @@
         #];
 
         fade = true;
-        fadeDelta = 4;
+        fadeDelta = 2;
         opacityRule = [
           "100:class_g   *?= 'Chromium-browser'"
           "100:class_g   *?= 'Firefox'"

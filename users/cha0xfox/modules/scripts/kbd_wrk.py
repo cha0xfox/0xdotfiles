@@ -1,7 +1,7 @@
 import os
 from pynput.keyboard import Key, Controller
 from evdev import InputDevice, categorize, ecodes
-dev = InputDevice('/dev/input/event257')
+dev = InputDevice('/dev/input/by-id/usb-SINO_WEALTH_Mechanical_Keyboard-event-kbd')
 dev.grab()
 
 keyboard = Controller()
