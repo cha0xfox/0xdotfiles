@@ -10,7 +10,7 @@
       emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, homeConfigurations, emacs-overlay, flake-utils, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, home, emacs-overlay, flake-utils, ... }: 
   let
     system = "x86_64-linux";
 
@@ -55,18 +55,20 @@
       #     ];
       #   };
       # };
-
-      inherit system pkgs;
+      cha0xfox = home-manager.lib.homeManagerConfiguration {
+      inherit system;
+      pkgs = nixpkgs.legacyPackages.${system};
       modules = [
-        /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
-        {
-          home = {
-            username = "cha0xfox";
-            homeDirectory = "/home/cha0xfox";
-            stateVersion = "21.05";
-          };
-        }
-      ];
+          /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
+          # {
+          # home = {
+          #   username = "cha0xfox";
+          #   homeDirectory = "/home/cha0xfox";
+          #   stateVersion = "22.11";
+          #   };
+          # }
+        ];
+      };
     };
 
     nixosConfigurations = {
