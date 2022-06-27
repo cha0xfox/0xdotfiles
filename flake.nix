@@ -10,7 +10,7 @@
       emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, emacs-overlay, flake-utils, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, homeConfigurations, emacs-overlay, flake-utils, ... }: 
   let
     system = "x86_64-linux";
 
