@@ -64,6 +64,7 @@
           "100:class_g   *?= 'Discord'"
           "100:class_g   *?= 'mpv'"
           "100:class_g   *?= 'virt-viewer'"
+          "100:class_g   *?= 'virt-manager'"
           #"100:class_g   *?= 'mailspring'"
           #"100:class_g   *?= 'element'"
         ];
