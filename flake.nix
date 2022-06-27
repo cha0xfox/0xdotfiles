@@ -41,20 +41,32 @@
 
   in {
     homeConfigurations = {
-      cha0xfox = home-manager.lib.homeManagerConfiguration {
-        inherit system pkgs;
-        # inherit system;
-        # pkgs = nixpkgsConfig;
+      # cha0xfox = home-manager.lib.homeManagerConfiguration {
+      #   inherit system pkgs;
+      #   # inherit system;
+      #   # pkgs = nixpkgsConfig;
 
-        username = "cha0xfox";
-        homeDirectory = "/home/cha0xfox";
-        stateVersion = "21.05";
-        configuration = {
-          imports = [
-            /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
-          ];
-        };
-      };
+      #   username = "cha0xfox";
+      #   homeDirectory = "/home/cha0xfox";
+      #   stateVersion = "21.05";
+      #   configuration = {
+      #     imports = [
+      #       /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
+      #     ];
+      #   };
+      # };
+
+      inherit system pkgs;
+      modules = [
+        /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
+        {
+          home = {
+            username = "cha0xfox";
+            homeDirectory = "/home/cha0xfox";
+            stateVersion = "21.05";
+          };
+        }
+      ];
     };
 
     nixosConfigurations = {
