@@ -56,8 +56,9 @@
       #   };
       # };
       cha0xfox = home-manager.lib.homeManagerConfiguration {
-      inherit system;
-      pkgs = nixpkgs.legacyPackages.${system};
+      # inherit system;
+      inherit pkgs;
+      # pkgs = nixpkgs.legacyPackages.${system};
       modules = [
           /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
           # {
