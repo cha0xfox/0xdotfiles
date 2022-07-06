@@ -23,6 +23,7 @@ in
     chromium
     dconf
     direnv
+    distrobox
     easyeffects
     fd fzf
     feh sxiv

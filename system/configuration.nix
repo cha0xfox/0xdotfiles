@@ -5,11 +5,11 @@
       ./hardware-configuration.nix
       ./modules/desktop.nix
       ./modules/xserver.nix
-      #./modules/wayland.nix
+      # ./modules/wayland.nix
       ./modules/virtualization.nix
-      #./modules/latex.nix
+      # ./modules/latex.nix
       ./modules/samba.nix
-      ./modules/distrobox.nix
+      # ./modules/distrobox.nix
     ];
   
   ##BOOT
