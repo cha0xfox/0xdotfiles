@@ -7,6 +7,18 @@ in
 
   home = {
     packages = with pkgs; [
+        # --- for wayland
+
+        # grim 
+        # slurp
+        # swaybg
+        # swaylock-effects
+        # wl-clipboard
+        # wlr-randr
+        # wlogout
+        # wofi
+
+        # ---       
         obsidian
         #pscircle
         #reaper
@@ -48,6 +60,7 @@ in
         xmobar
         ytmdl
         zathura
+        vopono
         # zoom-us
         spice-gtk
         (emacsWithPackages (epkgs: [

@@ -7,10 +7,15 @@
       nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-22.05";
       home-manager.url = "github:nix-community/home-manager";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
-      emacs-overlay.url = "github:nix-community/emacs-overlay";
+      emacs-overlay.url = "github:nix-community/emacs-overlay";    
+      hyprland = {
+        url = "github:hyprwm/Hyprland";
+        # build with your own instance of nixpkgs
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, emacs-overlay, flake-utils, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, emacs-overlay, flake-utils, hyprland, ... }: 
   let
     system = "x86_64-linux";
 
@@ -79,6 +84,7 @@
         # pkgs = nixpkgsConfig;
 
         modules = [
+          hyprland.nixosModules.default
           ./system/configuration.nix
         ];
       };

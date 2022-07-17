@@ -44,10 +44,11 @@ in
 {
   environment.systemPackages = with pkgs; [
     alacritty # gpu accelerated terminal
-    sway
+    # sway
     dbus-sway-environment
     configure-gtk
     wayland
+    hyprland
     glib # gsettings
     dracula-theme # gtk theme
     gnome3.adwaita-icon-theme  # default gnome cursors
@@ -72,14 +73,16 @@ in
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    gtkUsePortal = true;
   };
 
+
+  hardware.opengl.enable = true;
+
   # enable sway window manager
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+  # programs.sway = {
+  #   enable = true;
+  #   wrapperFeatures.gtk = true;
+  # };
 
   services.xserver = {
     enable = true;
