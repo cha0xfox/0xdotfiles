@@ -78,6 +78,8 @@
       };
     };
   };
+  # For using pipewire
+  hardware.pulseaudio.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cha0xfox = {
@@ -118,6 +120,8 @@
     settings.trusted-users = [ "cha0xfox" "root" ];
   };
 
+
+  nixpkgs.config.allowUnfree = true;
 
 
   # This value determines the NixOS release from which the default

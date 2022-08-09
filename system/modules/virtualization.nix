@@ -6,6 +6,7 @@ environment.systemPackages = with pkgs; [
   virt-manager
   looking-glass-client
   scream
+  OVMFFull
 ];
 
 virtualisation.libvirtd = {
@@ -13,7 +14,7 @@ virtualisation.libvirtd = {
   qemu.ovmf.enable = true;
   qemu.ovmf.packages = [ pkgs.OVMFFull ];
   qemu.swtpm.enable = true;
-  qemu.runAsRoot = false;
+  qemu.runAsRoot = true;
   onBoot = "ignore";
   onShutdown = "shutdown";
 };

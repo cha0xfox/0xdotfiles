@@ -8,38 +8,53 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "sata_sil24" "vfio_pci" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/653518b3-3bca-4f1c-b3a2-6ea214df03ed";
-      fsType = "btrfs";
-      options = [ "subvol=nixos" ];
+    { device = "/dev/disk/by-uuid/b09ad955-d91e-439b-b6ad-eee2f63a3ee4";
+      fsType = "xfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A260-02A7";
+    { device = "/dev/disk/by-uuid/6DC5-B058";
       fsType = "vfat";
     };
 
-  fileSystems."/DATA_2" =
-    { device = "/dev/disk/by-uuid/15b0e567-5b49-4775-801f-c724d0e478ff";
-      fsType = "ext4";
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/1b47dd02-dfd9-4825-8b0b-274b70e57f2f";
+      fsType = "xfs";
     };
 
-  #fileSystems."/DATA_1" =
-  #  { device = "/dev/sdf1";
-  #    fsType = "ext4";
-  #  };
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/1b21ab1b-c20b-46cd-b8fc-a280d649604e"; }
+    ];
+
+  fileSystems."/DATA_2" =
+    { device = "/dev/disk/by-uuid/3337cd64-2591-4455-9a21-5e2adcb13092";
+     fsType = "xfs";
+    };
+
+  fileSystems."/DATA_1" =
+    { device = "/dev/disk/by-uuid/69d3e7a0-fecf-4406-b9dd-a67b41b48ab3";
+     fsType = "xfs";
+    };
 
   fileSystems."/DATA_M2" =
-    { device = "/dev/disk/by-uuid/66acef72-51c3-4f45-b06f-48bf5583262a";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/d846ca03-2098-49b9-b4de-21141aafe000";
+      fsType = "xfs";
     };
 
-  swapDevices = [ ];
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
 
+  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

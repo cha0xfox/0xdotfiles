@@ -4,58 +4,30 @@
 
   services.picom = {
         enable = true;
-        activeOpacity = "0.9";
-        inactiveOpacity = "0.75";
+        activeOpacity = 0.95;
+        inactiveOpacity = 0.85;
         backend = "glx";
-        # blur = true;
-        # shadow = true;
-        # shadowOpacity = "0.85";
         vSync = true;
         experimentalBackends = true;
 
-        extraOptions = ''
+        settings = {
           corner-radius = 8;
-         # round-borders = 8;
           rounded-corners-exclude = [
-            "class_g *?= 'polybar'",
+            "class_g *?= 'polybar'"
             "class_g *?= 'rofi'"
-          ]
-          blur: {
-          # requires: https://github.com/ibhagwan/picom
-          method = "kawase";
-          #method = "kernel";
-          strength = 5;
-          # deviation = 1.0;
-          # kernel = "11x11gaussian";
-          background = false;
-          background-frame = false;
-          background-fixed = false;
-          kern = "3x3box";
-          }
-
-          # Exclude conditions for background blur.
-          blur-background-exclude = [
-          #"window_type = 'dock'",
-          #"window_type = 'desktop'",
-          #"class_g = 'URxvt'",
-          #
-          # prevents picom from blurring the background
-          # when taking selection screenshot with `main`
-          # https://github.com/naelstrof/maim/issues/130
-          "class_g = 'slop'",
-          "_GTK_FRAME_EXTENTS@:c"
           ];
-        '';
-
-        #experimentalBackends = true;
-
-        #shadowExclude = [
-        #  "bounding_shaped && !rounded_corners"
-        #];
+          method = "kawase";
+          strength = 5;
+          kern = "3x3box";
+          blur-background-exclude = [
+            "class_g = 'slop'"
+            "_GTK_FRAME_EXTENTS@:c"
+          ];
+        };
 
         fade = true;
         fadeDelta = 2;
-        opacityRule = [
+        opacityRules = [
           "100:class_g   *?= 'Chromium-browser'"
           "100:class_g   *?= 'Firefox'"
           "100:class_g   *?= 'Kotatogram'"

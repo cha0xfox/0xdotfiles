@@ -16,15 +16,20 @@ in
 {
 
   environment.systemPackages = with pkgs; [
+    kubectl
+    helm
+    minikube
+
     alacritty
     barrier
     bpytop
     busybox
     chromium
+    cifs-utils
     dconf
     direnv
     distrobox
-    easyeffects
+    stable.easyeffects
     fd fzf
     feh sxiv
     ghc

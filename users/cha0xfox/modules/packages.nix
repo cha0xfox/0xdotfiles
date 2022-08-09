@@ -18,24 +18,28 @@ in
         # wlogout
         # wofi
 
-        # ---       
+        # ---    
+        ark   
         obsidian
         #pscircle
         #reaper
-        ripcord
+        #ripcord
         #wmctrl
         #spotify
         bat
         betterdiscordctl
-        bottles
+        #stable.bottles
         bitwarden
         btrfs-progs
         copyq
+        coreutils-prefixed
         carla
+        #google-chrome
         discocss
         stable.discord
         element-desktop
         ffmpeg
+        flameshot
         gimp
         gnome3.adwaita-icon-theme
         gromit-mpx

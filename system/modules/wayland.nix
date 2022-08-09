@@ -78,16 +78,33 @@ in
 
   hardware.opengl.enable = true;
 
-  # enable sway window manager
-  # programs.sway = {
-  #   enable = true;
-  #   wrapperFeatures.gtk = true;
-  # };
+  programs.hyprland.enable = true;
+  programs.xwayland.enable = true;
 
-  services.xserver = {
-    enable = true;
-    videoDrivers = [
-      "amd"
-    ];
+  environment.sessionVariables = rec {
+
+    # Will break SDDM if running X11
+    QT_QPA_PLATFORM = "wayland";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
+    GDK_BACKEND = "wayland";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "Hyprland";
+        user = "cha0xfox";
+      };
+      default_session = initial_session;
+    };
+  };
+
+  environment.etc."greetd/environments".text = ''
+    Hyprland
+  '';
+
 }

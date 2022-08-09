@@ -53,5 +53,5 @@ for event in dev.read_loop():
         keyboard.press(Key.shift)
         keyboard.type("u")
         keyboard.release(Key.shift)
-      if key.keycode == 'KEY_SPACE':
+      if key.keycode == 'KEY_X':
         os.system('bash /home/cha0xfox/0xdotfiles/users/cha0xfox/modules/scripts/ytmpv.sh &')
