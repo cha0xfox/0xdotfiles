@@ -74,7 +74,7 @@ in
     proggyfonts
     mononoki
     font-awesome
-    iosevka
+    stable.iosevka
     (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
   ];
 

@@ -48,6 +48,7 @@ in
         #lens
         liquidprompt
         mailspring
+        meld
         mumble
         ncmpcpp
         neofetch

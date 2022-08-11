@@ -33,6 +33,9 @@
             # system = prev.stdenv.system;
             inherit system;
             nixpkgs-stable = inputs.nixos-stable;
+            config  = { 
+              allowUnfree = true;
+            };
           in {
             master = inputs.nixpkgs-master.legacyPackages.${system};
             stable = inputs.nixpkgs-stable.legacyPackages.${system};

@@ -51,7 +51,7 @@ import Text.XHtml (h1)
 
 main = do
   --xmproc2 <- spawnPipe "xmobar -x 2 ~/.xmobarrc"
-  xmonad $ docks $ewmh  def 
+  xmonad $ docks $ewmh . ewmhFullscreen $ def 
     { terminal    = myTerminal
     , modMask     = mod4Mask
     , keys        = myKeys
@@ -67,7 +67,7 @@ main = do
 --                        , ppTitle = xmobarColor "green" "" . shorten 50
 --                        }
     , manageHook  = myManageHook <+> manageDocks <+> namedScratchpadManageHook scratchpads
-    , handleEventHook = fullscreenEventHook
+    -- , handleEventHook = ewmhFullscreen
     }
 
 
@@ -115,6 +115,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_d     ), spawn "rofi -matching fuzzy rofi -show drun -modi drun,run -show-icons")
     , ((modm .|. shiftMask, xK_d     ), spawn "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/shutmenu.sh")
     , ((modm .|. shiftMask, xK_f     ), spawn "rofi -lines 10 -padding 0 -show search -modi search:~/0xdotfiles/users/cha0xfox/modules/scripts/rofi-web-search.py -i -p 'Search: '")
+    , ((modm .|. shiftMask, xK_v     ), spawn "code")
+    , ((modm .|. shiftMask, xK_b     ), spawn "pcmanfm")
 
     -- Restart xmonad
 
@@ -265,7 +267,7 @@ myManageHook = composeAll . concat $
     , [resource =? i --> doIgnore | i <- myIgnores]
     ]
     where
-		myCFloats = ["alacritty-float", "MPlayer", "mpv",	"Gimp", "feh", "Viewnior", "Gpicview", "Kvantum Manager", "qt5ct", "VirtualBox Manager", "qemu", "Qemu-system-x86_64", "Lxappearance", "Nitrogen", "Arandr", "Pavucontrol", "Xfce4-power-manager-settings", "Nm-connection-editor"]
+		myCFloats = ["alacritty-float", "MPlayer", "mpv", "Gimp", "feh", "Viewnior", "Gpicview", "Kvantum Manager", "qt5ct", "VirtualBox Manager", "qemu", "Qemu-system-x86_64", "Lxappearance", "Nitrogen", "Arandr", "Pavucontrol", "Xfce4-power-manager-settings", "Nm-connection-editor"]
 		myTFloats = ["Downloads", "Save As...", "Getting Started", "floatterm"]
 		myRFloats = []
 		myIgnores = ["desktop_window"]
