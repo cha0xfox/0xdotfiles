@@ -19,6 +19,7 @@
         doom = "~/.emacs.d/bin/doom";
         runarch = "distrobox-enter Arch -- zsh";
         runkali = "distrobox-enter Kali -- zsh";
+        kctl = "kubectl --kubeconfig ~/tmp/Mhub/configs/kubeconfig";
     };
     plugins = [
     ];

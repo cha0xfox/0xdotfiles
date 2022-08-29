@@ -116,7 +116,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_d     ), spawn "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/shutmenu.sh")
     , ((modm .|. shiftMask, xK_f     ), spawn "rofi -lines 10 -padding 0 -show search -modi search:~/0xdotfiles/users/cha0xfox/modules/scripts/rofi-web-search.py -i -p 'Search: '")
     , ((modm .|. shiftMask, xK_v     ), spawn "code")
-    , ((modm .|. shiftMask, xK_b     ), spawn "pcmanfm")
+    , ((modm .|. shiftMask, xK_b     ), spawn "alacritty -e 'ranger'")
 
     -- Restart xmonad
 
@@ -128,7 +128,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Copy screenshot 
 
-    , ((modm,               xK_p     ), spawn "maim -s -u | tee ~/Screenshots/screen-$(date +%s).png | xclip -selection clipboard -t image/png")
+    --, ((modm,               xK_p     ), spawn "maim -s -u | tee ~/Screenshots/screen-$(date +%s).png | xclip -selection clipboard -t image/png")
+    , ((modm,               xK_p     ), spawn "flameshot gui")
 
     , ((modm .|. shiftMask, xK_p     ), spawn "maim -st 0 | convert - -resize 1x1 -format '%[pixel:p{0,0}]' info:- | xclip -selection clipboard")
 
@@ -240,7 +241,8 @@ myLayouts =
 --------[Startup]--------
 
 myStartupHook = do
-    spawnOnce "feh --bg-fill ~/Wallpapers/wall.jpg"
+   -- spawnOnce "feh --bg-fill ~/Wallpapers/wall.jpg"
+    spawnOnce "nitrogen --restore"
     spawnOnce "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/autostart.sh"
     setDefaultCursor xC_left_ptr
     

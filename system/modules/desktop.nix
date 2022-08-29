@@ -43,6 +43,10 @@ in
     lm_sensors
     maim
     mpv
+    ranger
+    #w3m
+    ueberzug
+    xdragon
     nix-prefetch-git
     ntfs3g
     openconnect

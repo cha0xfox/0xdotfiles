@@ -33,6 +33,7 @@ in
         btrfs-progs
         copyq
         coreutils-prefixed
+        conky
         carla
         #google-chrome
         discocss
@@ -52,6 +53,7 @@ in
         mumble
         ncmpcpp
         neofetch
+        nitrogen
         parted
         pandoc
         polybar
@@ -60,11 +62,12 @@ in
         tdesktop
         virt-viewer
         libfm
+        rocketchat-desktop
         pcmanfm
         gvfs
         xmobar
         ytmdl
-        zathura
+        stable.zathura
         vopono
         # zoom-us
         spice-gtk

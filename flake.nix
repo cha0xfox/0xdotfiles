@@ -8,11 +8,6 @@
       home-manager.url = "github:nix-community/home-manager";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
       emacs-overlay.url = "github:nix-community/emacs-overlay";    
-      hyprland = {
-        url = "github:hyprwm/Hyprland";
-        # build with your own instance of nixpkgs
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, emacs-overlay, flake-utils, hyprland, ... }: 
@@ -49,33 +44,14 @@
 
   in {
     homeConfigurations = {
-      # cha0xfox = home-manager.lib.homeManagerConfiguration {
-      #   inherit system pkgs;
-      #   # inherit system;
-      #   # pkgs = nixpkgsConfig;
-
-      #   username = "cha0xfox";
-      #   homeDirectory = "/home/cha0xfox";
-      #   stateVersion = "21.05";
-      #   configuration = {
-      #     imports = [
-      #       /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
-      #     ];
-      #   };
-      # };
       cha0xfox = home-manager.lib.homeManagerConfiguration {
       # inherit system;
       inherit pkgs;
-      # pkgs = nixpkgs.legacyPackages.${system};
+      nixpkgs = {
+        config = { allowUnfree = true; };
+      };
       modules = [
           /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
-          # {
-          # home = {
-          #   username = "cha0xfox";
-          #   homeDirectory = "/home/cha0xfox";
-          #   stateVersion = "22.11";
-          #   };
-          # }
         ];
       };
     };
@@ -87,7 +63,6 @@
         # pkgs = nixpkgsConfig;
 
         modules = [
-          hyprland.nixosModules.default
           ./system/configuration.nix
         ];
       };
