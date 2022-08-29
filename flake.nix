@@ -19,6 +19,7 @@
       config  = { 
         allowUnfree = true;
         allowUnsupportedSystem = true;
+        allowUnfreePredicate = (pkg: true);
       };
 
       overlays = [
@@ -47,9 +48,6 @@
       cha0xfox = home-manager.lib.homeManagerConfiguration {
       # inherit system;
       inherit pkgs;
-      nixpkgs = {
-        config = { allowUnfree = true; };
-      };
       modules = [
           /home/cha0xfox/0xdotfiles/users/cha0xfox/home.nix
         ];
