@@ -1,0 +1,94 @@
+conky.config = { 
+	lua_load = '~/.config/conky/cpu_network.lua',
+	background = true,
+	use_xft = true,
+	font = 'monospace:size=8',
+	xftalpha = 0.8,
+	update_interval = 2,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = true,
+	own_window_type = 'desktop',
+	own_window_class = 'conky',
+	own_window_argb_visual = true,
+--	own_window_colour = '#263041',
+--  own_window_argb_value = 120,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	stippled_borders = 1,
+	border_width = 1,
+	default_color = 'white',
+	default_shade_color = 'gray',
+	default_outline_color = 'black',
+	alignment = 'top_right',
+	gap_x = 10,
+	gap_y = 50,
+	update_interval_on_battery = 5,
+
+-- Misc Console #
+   out_to_console = false,
+   out_to_stderr = false,
+   extra_newline = false,
+
+   no_buffers = true,
+   cpu_avg_samples = 2,
+   net_avg_samples = 2,
+   override_utf8_locale = true,
+   use_spacer = 'right',
+   maximum_width = 400,
+   minimum_height = 800,
+   uppercase = true,
+
+};
+
+conky.text = [[
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+${alignc}${offset 100}${font xftfont montserrat:size=10} cha0xfox${font}
+${alignr}${offset -6}└──────────┐
+${alignr}${offset -6}${exec cat /etc/issue.net} ${machine} ─┤
+${alignr}${offset -6}[ ${kernel} ] Kernel ─┤   │
+${alignr}${offset -6}[ ${uptime} ] Uptime ${if_existing /sys/class/power_supply/BAT1/capacity}─┤${else}─┘${endif}   │
+${if_existing /sys/class/power_supply/BAT1/capacity}\
+${alignr}${offset 0}${if_match ${battery_percent BAT1} <= 10 }${alignc}${color red}${blink Plug In Charger!!!}${endif}${color} ${battery_time BAT1} ${battery BAT1} Battery ─┘   │ 
+${alignr}${offset -6}[ ${if_match ${battery_percent BAT1} >= 15 }${color green}${battery_bar 5,120 BAT1}${color}${endif}${if_match ${battery_percent BAT1} < 15 }${color red}${battery_bar 5,120 BAT1}${color}${endif} ] ─┘       │
+${endif}\
+${alignr}${offset -6}│
+${alignr}${offset -6}system ─┘
+${alignr}${offset -6}[ ${execi 1000 cat /proc/cpuinfo|grep 'model name'|sed -e 's/model name.*: //'| uniq | cut -c 1-39}] CPU ─┤    
+${alignr}${offset -6}│   │    
+${alignr}${offset -6}usage ─┤   │    
+${lua_parse conky_mycpus}
+${alignr}${offset -6}│   │    
+${alignr}${offset -6}[ $loadavg ] load ─┤   │    
+${alignr}${offset -6}[ ${top name 1} ${top cpu 1} ] ─┤   │   │    
+${alignr}${offset -6}[ ${top name 2} ${top cpu 2} ] ─┤   │   │    
+${alignr}${offset -6}[ ${top name 3} ${top cpu 3} ] ─┤   │   │    
+${alignr}${offset -6}[ ${top name 4} ${top cpu 4} ] ─┤   │   │    
+${alignr}${offset -6}[ ${top name 5} ${top cpu 5} ] ─┘   │   │    
+${alignr}${offset -6}│   │    
+${alignr}${offset -6}Temperature ─┘   │    
+${alignr}${offset -6}[ ${execi 5 sensors|grep 'Package id 0:'| awk -F'+' '{print $2}' | awk -F'.' '{print $1}'} °C ] cpu ─┘       │    
+${if_existing /usr/bin/nvidia-settings}${alignr}${offset -6}[ ${execi 5 nvidia-settings -t -q [gpu]/GPUCoreTemp} °C ] gpu ─┘       │    ${else}${alignr}${offset -6}│    ${endif}
+${alignr}${offset -6}│    
+${alignr}${offset -6}[ $mem/$memmax ] Memory ─┤    
+${alignr}${offset -6}[ $memperc% ] used ─┘   │    
+${alignr}${offset -6}[ ${top name 1}${top mem 1}% ] ─┤       │    
+${alignr}${offset -6}[ ${top name 2}${top mem 2}% ] ─┤       │    
+${alignr}${offset -6}[ ${top name 3}${top mem 3}% ] ─┤       │    
+${alignr}${offset -6}[ ${top name 4}${top mem 4}% ] ─┤       │    
+${alignr}${offset -6}[ ${top name 5}${top mem 5}% ] ─┘       │    
+${alignr}${offset -6}│    
+${alignr}${offset -6}Disk Usage ─┤    
+${alignr}${offset -6}[ $diskio_read ]  read ─┤   │    
+${alignr}${offset -6}[ $diskio_write ] write ─┤   │    
+${lua_parse conky_mymounts}   
+${alignr}${offset -6}│    
+${alignr}${offset -6}Network ─┘    
+${alignr}${offset -29}[ $nodename ] hostname ─┤    
+${alignr}${offset -29}[ ${execi 60 wget -qO- ifconfig.co} ] Wan ─┤    
+${lua_parse conky_mynetwork}
+]];

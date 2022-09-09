@@ -20,7 +20,12 @@
         runarch = "distrobox-enter Arch -- zsh";
         runkali = "distrobox-enter Kali -- zsh";
         kctl = "kubectl --kubeconfig ~/tmp/Mhub/configs/kubeconfig";
-    };
+      };
+      shellInit = ''
+        set -g fish_cursor_default block
+        set -g fish_cursor_insert line
+      '';
+    
     plugins = [
     ];
   };
@@ -36,4 +41,24 @@
     enable = true;
   };
 
+  programs = {
+    broot = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+  };
+
+  programs = {
+    atuin = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+  };
+
+  programs = {
+    nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+  };
 }

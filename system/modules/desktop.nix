@@ -21,6 +21,8 @@ in
     minikube
 
     alacritty
+    kitty
+
     barrier
     bpytop
     busybox

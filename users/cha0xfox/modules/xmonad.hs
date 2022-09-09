@@ -42,6 +42,7 @@ import XMonad.Hooks.ManageHelpers
   , isDialog
   , isFullscreen
   , isInProperty
+  , doLower
   )
 import Distribution.Simple (KnownExtension(MultiWayIf))
 import Text.XHtml (h1)
@@ -90,9 +91,11 @@ myWS = [webWs, devWs, comWs, wrkWs, sysWs, etcWs]
 
 --------------------------
 
-myFish = "alacritty"
-myTerminal = "alacritty --class=floatterm"
+--myFish = "alacritty"
+--myTerminal = "alacritty --class=floatterm"
 
+myFish = "kitty"
+myTerminal = "kitty --class floatterm"
 
 --------[functions]--------
 
@@ -116,7 +119,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_d     ), spawn "sh ~/0xdotfiles/users/cha0xfox/modules/scripts/shutmenu.sh")
     , ((modm .|. shiftMask, xK_f     ), spawn "rofi -lines 10 -padding 0 -show search -modi search:~/0xdotfiles/users/cha0xfox/modules/scripts/rofi-web-search.py -i -p 'Search: '")
     , ((modm .|. shiftMask, xK_v     ), spawn "code")
-    , ((modm .|. shiftMask, xK_b     ), spawn "alacritty -e 'ranger'")
+    , ((modm .|. shiftMask, xK_b     ), spawn "kitty -e 'ranger'")
 
     -- Restart xmonad
 
@@ -253,7 +256,7 @@ myStartupHook = do
 -- scratchPads
 scratchpads :: [NamedScratchpad]
 scratchpads = [
-    NS "term" "alacritty --class scratchpad" (resource =? "scratchpad")
+    NS "term" "kitty --class scratchpad" (resource =? "scratchpad")
         (customFloating $ W.RationalRect (0.2) (0.1) (0.6) (0.7))
   ]
 
@@ -267,9 +270,10 @@ myManageHook = composeAll . concat $
     , [title =? t --> doCenterFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
     , [resource =? i --> doIgnore | i <- myIgnores]
+    , [className =? "conky" --> doLower ]
     ]
     where
 		myCFloats = ["alacritty-float", "MPlayer", "mpv", "Gimp", "feh", "Viewnior", "Gpicview", "Kvantum Manager", "qt5ct", "VirtualBox Manager", "qemu", "Qemu-system-x86_64", "Lxappearance", "Nitrogen", "Arandr", "Pavucontrol", "Xfce4-power-manager-settings", "Nm-connection-editor"]
 		myTFloats = ["Downloads", "Save As...", "Getting Started", "floatterm"]
 		myRFloats = []
-		myIgnores = ["desktop_window"]
+		myIgnores = ["desktop_window", "conky"]
