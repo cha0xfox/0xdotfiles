@@ -98,4 +98,16 @@ in
   services = {
     #some services
   };
+
+  services.openssh = {
+  enable = true;
+  # require public key authentication for better security
+  passwordAuthentication = false;
+  kbdInteractiveAuthentication = false;
+  #permitRootLogin = "yes";
+  };
+
+  users.users."cha0xfox".openssh.authorizedKeys.keys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDsQp4GdMOir4z9AEZYkbUFkry2SQF7pKTwnDdeocEpf8OHBfxSyFSwMi1FM6cx/xmGHnLmnl5K82iFNpsc4ecJi5faRyEt397GAOfTVRb1ab55OQPBb89JQ/JYFEsuMNBVLaSJ9RFESLgp++2M7Vaq/tbumuQAOdUdIUwFS1ZBABSeKKUm1ILayj38CHxSX7+ZM7syF8ZLEE3m/CqdW2kAMqD4451vmOLbrr7MqjxxYiaFgfM8SpFKXYTybas27+NeYc5wkAIeO/OQzoqMnCXf7t4GbNxgQdNP6YJRPzgplUMrmxfIs+78EoMwI2/uLyCvHAPqAKV0ImI3m3x7Yuyf cha0xfox"
+  ];
 }

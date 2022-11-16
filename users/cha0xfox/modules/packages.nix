@@ -19,7 +19,8 @@ in
         # wofi
 
         # ---    
-        ark   
+        ark
+        audacity
         obsidian
         #pscircle
         #reaper
@@ -42,7 +43,7 @@ in
         ffmpeg
         flameshot
         gimp
-        gnome3.adwaita-icon-theme
+        gnome.adwaita-icon-theme
         gromit-mpx
         imagemagick
         # teams
@@ -71,7 +72,7 @@ in
         vopono
         # zoom-us
         spice-gtk
-        (emacsWithPackages (epkgs: [
+        (emacs.pkgs.withPackages (epkgs: [
           epkgs.neotree
         ]))
     ] ++ [

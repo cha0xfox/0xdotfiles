@@ -42,7 +42,7 @@ CONFIG = {
         'duckduckgo' : 'DuckDuckGo'
     },
     'SEARCH_URL' : {
-        'google' : 'https://www.google.com/search?q=',
+        'google' : 'https://search.unlocked.link/search?q=',
         'duckduckgo' : 'https://duckduckgo.com/?q='
     },
     'SUGGESTION_URL' : {
